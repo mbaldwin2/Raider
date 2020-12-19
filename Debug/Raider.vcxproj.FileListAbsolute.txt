@@ -1,0 +1,2 @@
+D:\Projects\Programming\Raider\Debug\Raider.dll
+D:\Projects\Programming\Raider\Debug\Raider.pdb
