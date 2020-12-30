@@ -11,12 +11,7 @@ namespace Raider {
 	template<typename T>
 	class ColorTemplate {
 	public:
-		ColorTemplate(){
-			for(int i=0;i<3;i++)
-				color[i] = T(0);
-		}
-
-		ColorTemplate(T const & r =T(), T const & g =T(), T & const b =T()) {
+		ColorTemplate(T const & r =T(), T const & g =T(), T const & b =T()) {
 			color[0] = r;
 			color[1] = g;
 			color[2] = b;
@@ -89,9 +84,6 @@ namespace Raider {
 	template<typename T>
 	class ColorTemplateWithAlpha : public ColorTemplate<T> {
 	public:
-		ColorTemplateWithAlpha()
-		: ColorTemplate<T>(), alpha() {}
-
 		ColorTemplateWithAlpha(T const & r =T(), T const & g =T(), T const & b =T(), T const & a =T())
 		: ColorTemplate<T>(r,g,b){
 			alpha = a;
@@ -139,7 +131,7 @@ namespace Raider {
 
 		typename ColorTemplateWithAlpha<T> & operator * (T const & r) const {
 			ColorTemplateWithAlpha<T> u = *this;
-			return u *= other;
+			return u *= r;
 		}
 
 	protected:
